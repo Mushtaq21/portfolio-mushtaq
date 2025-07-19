@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Montserrat:wght@700&display=swap');
+
+/* Derived Color Variations from #141432 */
+/* Base: H: 240, S: 44%, L: 14% */
+:root {
+    --color-dark-blue: #141432; /* Base color */
+    --color-medium-blue: #3B3B6F; /* Lighter shade for accents/hover */
+    --color-light-blue: #A2A2CC; /* Light blue for borders/subtle elements */
+    --color-very-light-blue: #EFEFF4; /* Very light blue/grey for other minor backgrounds */
+    --color-text-on-dark: #FFFFFF; /* White text for dark backgrounds */
+    --color-text-on-light: #333333; /* Darker text for general light backgrounds */
+}
+
+/* Basic Resets */
+body, h1, h3, p, ul, li, form, label, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    /* --- CHANGE MADE HERE --- */
+    background-color: var(--color-dark-blue); /* Sets the body background to #141432 */
+    /* --- END CHANGE --- */
+    color: var(--color-text-on-light); /* Default dark text, mostly applies to text not inside container */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px; /* Adjust as needed */
+    margin: 40px auto;
+    background-color: var(--color-text-on-dark); /* Remains white for content contrast */
+    padding: 30px 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Rest of your CSS remains the same as before */
+
+/* Header Section */
+.contact-header {
+    display: flex;
+    align-items: center; /* CHANGE THIS LINE: from flex-start to center */
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+}
+
+.contact-header h1::first-letter {
+    text-transform: capitalize; /* Ensure this line is present */
+}
+
+
+.header-content {
+    flex: 1;
+}
+
+.contact-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.2em;
+    color: var(--color-dark-blue);
+    text-transform: lowercase;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    font-size: 1.1em;
+    color: var(--color-text-on-light);
+    margin-bottom: 25px;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+}
+
+.social-links li {
+    margin-bottom: 12px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-dark-blue);
+    font-size: 1.05em;
+    transition: color 0.2s ease;
+}
+
+.social-link .icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: var(--color-text-on-dark);
+    margin-right: 15px;
+    font-size: 0.8em;
+    background-color: var(--color-dark-blue);
+}
+
+.social-link:hover {
+    color: var(--color-medium-blue);
+}
+
+.header-image {
+    flex-shrink: 0;
+    width: 250px;
+    height: auto;
+}
+
+.header-image img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    border-radius: 4px;
+    padding-top: 25px;
+}
+
+/* Divider */
+.divider {
+    border: none;
+    border-top: 1px solid var(--color-light-blue);
+    margin: 40px 0;
+}
+
+/* Contact Form Section */
+.contact-form-section h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    color: var(--color-dark-blue);
+    margin-bottom: 25px;
+}
+
+.contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 280px;
+}
+
+.form-group.message-group {
+    flex: 2;
+}
+
+.form-group.full-width {
+    flex-basis: 100%;
+}
+
+.form-group label {
+    font-size: 1em;
+    margin-bottom: 8px;
+    color: var(--color-dark-blue);
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-light-blue);
+    border-radius: 4px;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-medium-blue);
+    box-shadow: 0 0 5px hsla(240, 44%, 14%, 0.5);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Send Button Styles */
+.send-button {
+    background-color: var(--color-dark-blue);
+    color: var(--color-text-on-dark);
+    padding: 17px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    align-self: flex-start;
+    margin-top: 70px;
+}
+
+.send-button:hover {
+    background-color: var(--color-medium-blue);
+    transform: translateY(-1px);
+}
+
+.send-button:active {
+    transform: translateY(0);
+}
+
+/* Message Confirmation Styles (using blue variations) */
+.message-confirmation {
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* Success message in a blue tone */
+.message-confirmation.success {
+    background-color: hsla(240, 44%, 90%, 0.8);
+    color: var(--color-dark-blue);
+    border: 1px solid var(--color-light-blue);
+}
+
+/* Error message in a blue tone (slightly desaturated for distinction) */
+.message-confirmation.error {
+    background-color: hsla(240, 30%, 85%, 0.8);
+    color: var(--color-dark-blue);
+    border: 1px solid hsla(240, 30%, 70%, 1);
+}
+
+/* Basic responsiveness */
+@media (max-width: 768px) {
+    .contact-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-content, .header-image {
+        width: 100%;
+        flex: none;
+    }
+
+    .social-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-link {
+        justify-content: center;
+    }
+
+    .contact-form {
+        flex-direction: column;
+    }
+
+    .form-group, .form-group.message-group, .form-group.full-width {
+        flex: none;
+        width: 100%;
+        min-width: unset;
+    }
+
+    .send-button {
+        width: 100%;
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .contact-header h1 {
+        font-size: 2.5em;
+    }
+
+    .contact-form-section h3 {
+        font-size: 1.5em;
+    }
+}

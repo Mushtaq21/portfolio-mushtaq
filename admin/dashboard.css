@@ -1,0 +1,193 @@
+/* Import Google Fonts - Poppins for consistency */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --dashboard-bg: #1A1A32; /* Slightly different dark blue for dashboard background */
+    --card-bg: #2C2C54; /* Darker card background for sections */
+    --text-color: #E0E0E0; /* Light text for readability on dark background */
+    --accent-color: #6A35F4; /* Purple accent (consistent with login button) */
+    --red-alert: #E74C3C; /* Red for delete/clear actions */
+    --light-grey-border: #444477; /* Border for tables, inputs etc. */
+    --header-bg: #141432; /* Very dark blue for header */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--dashboard-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top, not center vertically */
+    min-height: 100vh;
+    padding: 20px; /* Add some padding around the container */
+    box-sizing: border-box;
+}
+
+.dashboard-container {
+    background-color: var(--header-bg); /* Dark blue for main container similar to header */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 95%; /* Make it wider */
+    max-width: 1200px; /* Limit max width */
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--light-grey-border);
+}
+
+.welcome-title {
+    font-size: 2.5em;
+    color: #FFFFFF; /* White for main title */
+    margin: 0;
+    font-weight: 700;
+}
+
+.logout-button {
+    background-color: var(--red-alert);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #C0392B; /* Darker red on hover */
+}
+
+.dashboard-section {
+    background-color: var(--card-bg); /* Darker card background for sections */
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.section-title {
+    font-size: 1.8em;
+    color: var(--text-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    display: inline-block; /* Make border-bottom fit text */
+    font-weight: 600;
+}
+
+.table-wrapper {
+    overflow-x: auto; /* For responsive tables on smaller screens */
+    margin-bottom: 20px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid var(--light-grey-border);
+    padding: 12px 15px;
+    text-align: left;
+    color: var(--text-color);
+}
+
+.data-table th {
+    background-color: var(--accent-color); /* Accent color for table headers */
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.1); /* Subtle stripe for readability */
+}
+
+.data-table tr:hover {
+    background-color: rgba(0, 0, 0, 0.2); /* Slight hover effect */
+}
+
+.action-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.action-link:hover {
+    text-decoration: underline;
+    color: var(--light-purple); /* Lighter purple on hover */
+}
+
+.delete-link {
+    color: var(--red-alert); /* Red for delete actions */
+}
+
+.delete-link:hover {
+    color: #C0392B; /* Darker red on hover */
+}
+
+.clear-button {
+    background-color: var(--red-alert);
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.clear-button:hover {
+    background-color: #C0392B;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .welcome-title {
+        margin-bottom: 15px;
+    }
+    .dashboard-container {
+        padding: 20px;
+    }
+    .dashboard-section {
+        padding: 20px;
+    }
+    .data-table th, .data-table td {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-title {
+        font-size: 2em;
+    }
+    .section-title {
+        font-size: 1.5em;
+    }
+    .logout-button, .clear-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}

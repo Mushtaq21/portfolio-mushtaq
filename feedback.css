@@ -1,0 +1,153 @@
+/* Optional: Include Open Sans font if not already linked */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* Color Palette based on #141432 (Dark Blue) */
+:root {
+    --color-dark-blue: #141432; /* Main page background */
+    --color-medium-blue: #3B3B6F; /* Accent, input borders */
+    --color-light-blue: #A2A2CC; /* Lighter accents */
+
+    /* Form container and elements */
+    --color-form-bg: #FFFFFF; /* White background for the form container */
+    --color-form-text: #333333; /* Dark text for form content */
+    --color-input-bg: #FDFDFD; /* Very light background for input fields */
+    --color-input-border: #CCCCCC; /* Light grey border for inputs */
+    --color-placeholder-text: #999999; /* Placeholder text color */
+
+    /* Button specific colors */
+    --color-button-bg: #141432; /* Button background matches body background */
+    --color-button-text: #FFFFFF; /* White text on button */
+    --color-button-hover-bg: #3B3B6F; /* Medium blue on hover */
+
+    /* Feedback message colors (keeping as before as they work well) */
+    --color-success-bg: #d4edda;
+    --color-success-text: #155724;
+    --color-success-border: #c3e6cb;
+    --color-error-bg: #f8d7da;
+    --color-error-text: #721c24;
+    --color-error-border: #f5c6cb;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; /* Or your preferred font */
+    background-color: var(--color-dark-blue); /* Sets the main page background to #141432 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.feedback-container {
+    background-color: var(--color-form-bg); /* White background for the form */
+    color: var(--color-form-text); /* Dark text inside the form */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Stronger shadow against dark background */
+    width: 450px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.feedback-title {
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--color-dark-blue); /* Title color matches page background for theme consistency */
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--color-form-text); /* Dark text for labels */
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+   border: 2px solid var(--color-light-blue);; /* Light grey border for inputs */
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: var(--color-input-bg); /* Very light background for inputs */
+    color: var(--color-form-text); /* Dark text in inputs */
+    font-size: 1.1em; /* Increased font size for readability */
+    line-height: 1.5; /* Added for better line spacing in textarea */
+    
+    /* These properties ensure consistent and smooth font rendering */
+    font-family: 'Open Sans', sans-serif; /* Explicitly set the font to match body */
+    -webkit-font-smoothing: antialiased; /* For smoother text rendering on Webkit browsers */
+    -moz-osx-font-smoothing: grayscale; /* For smoother text rendering on macOS (Firefox) */
+    text-rendering: optimizeLegibility; /* Improves text rendering quality (ligatures, kerning) */
+    
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--color-placeholder-text); /* Placeholder text color */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-medium-blue); /* Medium blue on focus */
+    box-shadow: 0 0 8px rgba(59, 59, 111, 0.3); /* Subtle glowing effect with medium blue */
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submit-button {
+    background-color: var(--color-button-bg); /* Button background matches page background */
+    color: var(--color-button-text); /* White text on button */
+    padding: 14px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: var(--color-button-hover-bg); /* Medium blue on hover */
+    transform: translateY(-2px);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+}
+
+/* Feedback message styles */
+.feedback-message {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.feedback-message.success {
+    background-color: var(--color-success-bg);
+    color: var(--color-success-text);
+    border: 1px solid var(--color-success-border);
+}
+
+.feedback-message.error {
+    background-color: var(--color-error-bg);
+    color: var(--color-error-text);
+    border: 1px solid var(--color-error-border);
+}
